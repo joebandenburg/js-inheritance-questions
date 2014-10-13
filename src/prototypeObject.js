@@ -1,0 +1,3 @@
+var prototypeObject = (function() {
+    return {};
+})();

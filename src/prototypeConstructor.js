@@ -1,0 +1,3 @@
+var prototypeConstructor = (function() {
+    return {};
+})();
