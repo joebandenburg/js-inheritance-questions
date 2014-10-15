@@ -2,7 +2,11 @@ describe('prototypeConstructor', function() {
     var Cat = prototypeConstructor.Cat;
     var Animal = prototypeConstructor.Animal;
 
-    var pebbles = new Cat('Pebbles');
+    var pebbles;
+    beforeEach(function() {
+        pebbles = new Cat('Pebbles');
+    });
+
     describe('the behaviour of an instance', function() {
         xit('meows', function() {
             expect(pebbles.meow()).toBe('Meow!');
@@ -26,7 +30,11 @@ describe('prototypeConstructor', function() {
             expect(pebbles instanceof Animal).toBe(true);
         });
         describe('its prototype', function() {
-            var catPrototype = Object.getPrototypeOf(pebbles);
+            var catPrototype;
+            beforeEach(function() {
+                catPrototype = Object.getPrototypeOf(pebbles);
+            });
+
             xit('is the Cat prototype', function() {
                 expect(catPrototype).toBe(Cat.prototype);
             });
@@ -37,7 +45,11 @@ describe('prototypeConstructor', function() {
                 expect(catPrototype.constructor).toBe(Cat);
             });
             describe('its prototype', function() {
-                var animalPrototype = Object.getPrototypeOf(catPrototype);
+                var animalPrototype;
+                beforeEach(function() {
+                    animalPrototype = Object.getPrototypeOf(catPrototype);
+                });
+                
                 xit('is the Animal prototype', function() {
                     expect(animalPrototype).toBe(Animal.prototype);
                 });

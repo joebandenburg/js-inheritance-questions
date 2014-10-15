@@ -2,7 +2,11 @@ describe('closureConstructor', function() {
     var Cat = closureConstructor.Cat;
     var Animal = closureConstructor.Animal;
 
-    var pebbles = new Cat('Pebbles');
+    var pebbles;
+    beforeEach(function() {
+        pebbles = new Cat('Pebbles');
+    });
+
     describe('the behaviour of an instance', function() {
         xit('meows', function() {
             expect(pebbles.meow()).toBe('Meow!');
