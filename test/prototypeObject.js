@@ -3,7 +3,7 @@ describe('prototypeObject', function() {
 
     var pebbles;
     beforeEach(function() {
-        pebbles = new Cat('Pebbles');
+        pebbles = Cat('Pebbles');
     });
 
     describe('the behaviour of an instance', function() {
