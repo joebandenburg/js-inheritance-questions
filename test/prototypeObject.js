@@ -1,7 +1,11 @@
 describe('prototypeObject', function() {
     var Cat = prototypeObject.Cat;
 
-    var pebbles = Cat('Pebbles');
+    var pebbles;
+    beforeEach(function() {
+        pebbles = new Cat('Pebbles');
+    });
+
     describe('the behaviour of an instance', function() {
         xit('meows', function() {
             expect(pebbles.meow()).toBe('Meow!');
@@ -19,12 +23,20 @@ describe('prototypeObject', function() {
             expect(pebbles.name).toBe('Pebbles');
         });
         describe('its prototype', function() {
-            var catPrototype = Object.getPrototypeOf(pebbles);
+            var catPrototype;
+            beforeEach(function() {
+                catPrototype = Object.getPrototypeOf(pebbles);
+            });
+            
             xit('has the correct properties', function() {
                 expect(Object.keys(catPrototype).sort()).toEqual(['meow', 'walk']);
             });
             describe('its prototype', function() {
-                var animalPrototype = Object.getPrototypeOf(catPrototype);
+                var animalPrototype;
+                beforeEach(function() {
+                    animalPrototype = Object.getPrototypeOf(catPrototype);
+                });
+                
                 xit('has the correct properties', function() {
                     expect(Object.keys(animalPrototype).sort()).toEqual(['eat', 'walk']);
                 });
